@@ -9,8 +9,8 @@ Compressed sensing of sequential signal by leveraging generative models
 5. matplotlib
 6. scipy
 ## Download/extract the datasets:
-* UCF101: [https://www.crcv.ucf.edu/research/data-sets/ucf101/]
-* Moving mnist: [https://www.cs.toronto.edu/~nitish/unsupervised_video/]
+* UCF101: [https://www.crcv.ucf.edu/research/data-sets/ucf101/]()
+* Moving mnist: [https://www.cs.toronto.edu/~nitish/unsupervised_video/]()
 Place the datasets in the “data” folder
 ## Download the models
 The pretrained models:
