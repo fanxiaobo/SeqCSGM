@@ -11,10 +11,12 @@ Compressed sensing of sequential signal by leveraging generative models
 ## Download/extract the datasets:
 * UCF101: [https://www.crcv.ucf.edu/research/data-sets/ucf101/]()
 * Moving mnist: [https://www.cs.toronto.edu/~nitish/unsupervised_video/]()
+* 
 Place the datasets in the “data” folder
 ## Download the models
 The pretrained models:
 The end2end model also can trained in 
+
 Place the models in the "modles" folder
 # Steps to run the SeqCSGM and other recovery methods
 1. edit the hyper-parameters in exp, such as batch_size, learning_rate,noise_std
