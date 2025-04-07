@@ -65,7 +65,7 @@ def solve_weighted_lasso(A, y, lasso_weights, pos, lmbd):
 
 
 
-def wavelet_basis(path='../models/wavelet_basis.npy'):
+def wavelet_basis(path='models/wavelet_basis.npy'):
     W_ = np.load(path)
     # W_ initially has shape (4096,64,64), i.e. 4096 64x64 images
     # reshape this into 4096x4096, where each row is an image
