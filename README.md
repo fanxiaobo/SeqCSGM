@@ -19,4 +19,6 @@ Place the datasets in the “data” folder: data/UCF101, data/Movingmnist
 
 Place the models in the "models" folder
 # Run the SeqCSGM and other recovery methods
+The main.py invoke all the recovery methods. An example usage is
+```python
 python main.py --dataset ucf --batch_size 100 --llambda 10
