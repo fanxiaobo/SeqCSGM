@@ -14,8 +14,8 @@ Compressed sensing of sequential signal by leveraging generative models
   
 Place the datasets in the “data” folder: data/UCF101, data/Movingmnist
 ## Download the models
-The pretrained vae model: [https://huggingface.co/maxin-cn/Latte]() or [https://pan.baidu.com/s/1fY74z2GSdu4qo1vFjp6QUQ?pwd=i4cf]()
-The end2end model also can trained in e2e_train.ipynb
+* The pretrained vae model: [https://huggingface.co/maxin-cn/Latte]() or [https://pan.baidu.com/s/1fY74z2GSdu4qo1vFjp6QUQ?pwd=i4cf]()
+* The end2end model also can trained in e2e_train.ipynb
 
 Place the models in the "models" folder
 # Run the SeqCSGM and other recovery methods
