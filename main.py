@@ -18,11 +18,11 @@ from utils import *
 # load test data
 def test_data_load(dataset, batch_size):
     if dataset=="ucf":
-        dataset = UCF101VideoDataset(video_folder="../data/UCF101", transform=None, start=0, end=10)
+        dataset = UCF101VideoDataset(video_folder="data/UCF101", transform=None, start=0, end=10)
         test_loader = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=True)
     elif dataset=="mmnist":
-        train_set = MovingMNIST(root='../data/Movingmnist', start=0, end=10, train=True, download=True)
-        test_set = MovingMNIST(root='../data/Movingmnist', start=0, end=10, train=False, download=True)  
+        train_set = MovingMNIST(root='data/Movingmnist', start=0, end=10, train=True, download=True)
+        test_set = MovingMNIST(root='data/Movingmnist', start=0, end=10, train=False, download=True)  
         train_loader = torch.utils.data.DataLoader(
                  dataset=train_set,
                  batch_size=batch_size,
@@ -59,7 +59,7 @@ if __name__ == "__main__":
     T = 8                   # Total number of time slots
     
     # pre-trained model
-    vae = AutoencoderKLTemporalDecoder.from_pretrained("../models", subfolder="vae_temporal_decoder", torch_dtype=torch.float32)
+    vae = AutoencoderKLTemporalDecoder.from_pretrained("models", subfolder="vae_temporal_decoder", torch_dtype=torch.float32)
     vae.to(device)
     vae.eval()
     
@@ -141,14 +141,14 @@ if __name__ == "__main__":
         estimator_e2e = E2EAutoencoder(hparams_e2e).to(device)
         if dataset=="mmnist":
             if t==0:
-                estimator_e2e.load_state_dict(torch.load("../models/e2e_movingmnist_m1500model.pth", map_location=device))
+                estimator_e2e.load_state_dict(torch.load("models/e2e_movingmnist_m1500model.pth", map_location=device))
             else:
-                estimator_e2e.load_state_dict(torch.load("../models/e2e_movingmnist_m300model.pth", map_location=device))
+                estimator_e2e.load_state_dict(torch.load("models/e2e_movingmnist_m300model.pth", map_location=device))
         else:
             if t==0:
-                estimator_e2e.load_state_dict(torch.load("../models/e2e_ucf_m2000model.pth", map_location=device))
+                estimator_e2e.load_state_dict(torch.load("models/e2e_ucf_m2000model.pth", map_location=device))
             else:
-                estimator_e2e.load_state_dict(torch.load("../models/e2e_ucf_m500model.pth", map_location=device))
+                estimator_e2e.load_state_dict(torch.load("models/e2e_ucf_m500model.pth", map_location=device))
         estimated_images_e2e[:, t, :, :, :] = estimator_e2e(real_images)
         
         # modifiedCS
